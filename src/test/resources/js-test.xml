@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page>
+  <title>JavaScript Highlight Test</title>
+  <content>
+    <javascript>
+      console.log("JavaScript without CDATA");
+      const x = 10;
+      if (x > 5) {
+        console.log("x is large");
+      }
+    </javascript>
+    <javascript>
+      <![CDATA[
+      // JavaScript inside CDATA
+      function greet(name) {
+        return `Hello, ${name}!`;
+      }
+      console.log(greet("Smith"));
+      ]]>
+    </javascript>
+  </content>
+</page>

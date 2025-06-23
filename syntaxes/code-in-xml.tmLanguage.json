@@ -1,0 +1,55 @@
+{
+  "name": "Code in XML",
+  "scopeName": "text.xml.with.source.code",
+  "patterns": [
+    {
+      "begin": "(?i)<groovy(?:\\s[^>]*)?>",
+      "end": "</groovy>",
+      "name": "meta.embedded.block.groovy.xml",
+      "patterns": [
+        {
+          "begin": "<!\\[CDATA\\[",
+          "end": "\\]\\]>",
+          "contentName": "source.groovy",
+          "patterns": [
+            {
+              "include": "source.groovy"
+            }
+          ]
+        },
+        {
+          "include": "source.groovy"
+        }
+      ]
+    },
+    {
+      "begin": "(?i)<javascript(?:\\s[^>]*)?>",
+      "end": "</javascript>",
+      "name": "meta.embedded.block.javascript.xml",
+      "patterns": [
+        {
+          "begin": "<!\\[CDATA\\[",
+          "end": "\\]\\]>",
+          "contentName": "source.js",
+          "patterns": [
+            {
+              "include": "source.js"
+            }
+          ]
+        },
+        {
+          "include": "source.js"
+        }
+      ]
+    },
+    {
+      "include": "text.xml"
+    }
+  ],
+  "injections": {},
+  "repository": {},
+  "fileTypes": [
+    "xml"
+  ],
+  "uuid": "f3e273b1-3c7d-4a6d-a5cb-b040f0cafe41"
+}
