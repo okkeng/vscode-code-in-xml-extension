@@ -1,0 +1,32 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+out/
+.vscode-test/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# VS Code settings (optional: keep if useful for team)
+#.vscode/
+
+# TypeScript
+*.tsbuildinfo
+
+# Compiled files
+*.js
+*.js.map
+
+# OS・エディタ由来の一時ファイル
+.DS_Store
+Thumbs.db
+*.log
+
+# Optional: package manager lock files
+# package-lock.json を除外しない場合は以下をコメントアウト
+# pnpm-lock.yaml
+# yarn.lock
