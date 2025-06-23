@@ -4,12 +4,15 @@
   "description": "Support for embedded code blocks (e.g. <groovy>...</groovy>) in XML",
   "keywords": [
     "xml",
+    "xml dsl",
+    "apache camel",
     "groovy",
+    "javascript",
     "syntax highlighting",
-    "embedded code in xml"
+    "code in xml"
   ],
   "version": "0.0.1",
-  "publisher": "your-publisher-id",
+  "publisher": "okkeng",
   "icon": "images/icon.png",
   "license": "MIT",
   "repository": "https://github.com/okkeng/vscode-code-in-xml-extension.git",
