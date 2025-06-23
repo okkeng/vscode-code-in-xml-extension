@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page>
+  <title>Groovy Highlight Test</title>
+  <content>
+    <groovy>
+      println "Groovy without CDATA"
+      def items = ['apple', 'banana', 'cherry']
+      items.each { println it }
+    </groovy>
+    <groovy>
+      <![CDATA[
+      // Groovy with CDATA
+      class Greeter {
+        def greet(name) {
+          return "Hello, ${name}!"
+        }
+      }
+      println new Greeter().greet("John")
+      ]]>
+    </groovy>
+  </content>
+</page>

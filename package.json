@@ -1,21 +1,39 @@
 {
   "name": "vscode-code-in-xml",
-  "displayName": "vscode-code-in-xml",
+  "displayName": "Code in XML",
   "description": "Support for embedded code blocks (e.g. <groovy>...</groovy>) in XML",
+  "keywords": [
+    "xml",
+    "groovy",
+    "syntax highlighting",
+    "embedded code in xml"
+  ],
   "version": "0.0.1",
+  "publisher": "your-publisher-id",
+  "icon": "images/icon.png",
+  "license": "MIT",
+  "repository": "https://github.com/okkeng/vscode-code-in-xml-extension.git",
   "engines": {
     "vscode": "^1.101.0"
   },
   "categories": [
-    "Other"
+    "Programming Languages"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onLanguage:xml"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
-    "commands": [
+    "commands": [],
+    "grammars": [
       {
-        "command": "vscode-code-in-xml.helloWorld",
-        "title": "Hello World"
+        "language": "xml",
+        "scopeName": "text.xml.with.source.code",
+        "path": "./syntaxes/code-in-xml.tmLanguage.json",
+        "embeddedLanguages": {
+          "source.groovy": "groovy",
+          "source.js": "javascript"
+        }
       }
     ]
   },
@@ -34,16 +52,16 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.101.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "20.x",
+    "@types/vscode": "^1.101.0",
     "@typescript-eslint/eslint-plugin": "^8.31.1",
     "@typescript-eslint/parser": "^8.31.1",
-    "eslint": "^9.25.1",
-    "esbuild": "^0.25.3",
-    "npm-run-all": "^4.1.5",
-    "typescript": "^5.8.3",
     "@vscode/test-cli": "^0.0.10",
-    "@vscode/test-electron": "^2.5.2"
+    "@vscode/test-electron": "^2.5.2",
+    "esbuild": "^0.25.3",
+    "eslint": "^9.29.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.8.3"
   }
 }
