@@ -7,11 +7,14 @@
     "xml dsl",
     "apache camel",
     "groovy",
+    "java",
     "javascript",
+    "python",
+    "ruby",
     "syntax highlighting",
-    "code in xml"
+    "embedded code in xml"
   ],
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "okkeng",
   "icon": "images/icon.png",
   "license": "MIT",
@@ -35,7 +38,10 @@
         "path": "./syntaxes/code-in-xml.tmLanguage.json",
         "embeddedLanguages": {
           "source.groovy": "groovy",
-          "source.js": "javascript"
+          "source.java": "java",
+          "source.js": "javascript",
+          "source.python": "python",
+          "source.ruby": "ruby"
         }
       }
     ]
