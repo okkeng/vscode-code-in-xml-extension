@@ -23,6 +23,26 @@
       ]
     },
     {
+      "begin": "(?i)<java(?:\\s[^>]*)?>",
+      "end": "</java>",
+      "name": "meta.embedded.block.java.xml",
+      "patterns": [
+        {
+          "begin": "<!\\[CDATA\\[",
+          "end": "\\]\\]>",
+          "contentName": "source.java",
+          "patterns": [
+            {
+              "include": "source.java"
+            }
+          ]
+        },
+        {
+          "include": "source.java"
+        }
+      ]
+    },
+    {
       "begin": "(?i)<javascript(?:\\s[^>]*)?>",
       "end": "</javascript>",
       "name": "meta.embedded.block.javascript.xml",
@@ -39,6 +59,146 @@
         },
         {
           "include": "source.js"
+        }
+      ]
+    },
+    {
+      "begin": "(?i)<python(?:\\s[^>]*)?>",
+      "end": "</python>",
+      "name": "meta.embedded.block.python.xml",
+      "patterns": [
+        {
+          "begin": "<!\\[CDATA\\[",
+          "end": "\\]\\]>",
+          "contentName": "source.python",
+          "patterns": [
+            {
+              "include": "source.python"
+            }
+          ]
+        },
+        {
+          "include": "source.python"
+        }
+      ]
+    },
+    {
+      "begin": "(?i)<ruby(?:\\s[^>]*)?>",
+      "end": "</ruby>",
+      "name": "meta.embedded.block.ruby.xml",
+      "patterns": [
+        {
+          "begin": "<!\\[CDATA\\[",
+          "end": "\\]\\]>",
+          "contentName": "source.ruby",
+          "patterns": [
+            {
+              "include": "source.ruby"
+            }
+          ]
+        },
+        {
+          "include": "source.ruby"
+        }
+      ]
+    },
+    {
+      "begin": "(?i)<language\\s+language=[\"']groovy[\"'](?:\\s[^>]*)?>",
+      "end": "</language>",
+      "name": "meta.embedded.language.groovy.xml",
+      "patterns": [
+        {
+          "begin": "<!\\[CDATA\\[",
+          "end": "\\]\\]>",
+          "contentName": "source.groovy",
+          "patterns": [
+            {
+              "include": "source.groovy"
+            }
+          ]
+        },
+        {
+          "include": "source.groovy"
+        }
+      ]
+    },
+    {
+      "begin": "(?i)<language\\s+language=[\"']java[\"'](?:\\s[^>]*)?>",
+      "end": "</language>",
+      "name": "meta.embedded.language.java.xml",
+      "patterns": [
+        {
+          "begin": "<!\\[CDATA\\[",
+          "end": "\\]\\]>",
+          "contentName": "source.java",
+          "patterns": [
+            {
+              "include": "source.java"
+            }
+          ]
+        },
+        {
+          "include": "source.java"
+        }
+      ]
+    },
+    {
+      "begin": "(?i)<language\\s+language=[\"']javascript[\"'](?:\\s[^>]*)?>",
+      "end": "</language>",
+      "name": "meta.embedded.language.javascript.xml",
+      "patterns": [
+        {
+          "begin": "<!\\[CDATA\\[",
+          "end": "\\]\\]>",
+          "contentName": "source.js",
+          "patterns": [
+            {
+              "include": "source.js"
+            }
+          ]
+        },
+        {
+          "include": "source.js"
+        }
+      ]
+    },
+    {
+      "begin": "(?i)<language\\s+language=[\"']python[\"'](?:\\s[^>]*)?>",
+      "end": "</language>",
+      "name": "meta.embedded.language.python.xml",
+      "patterns": [
+        {
+          "begin": "<!\\[CDATA\\[",
+          "end": "\\]\\]>",
+          "contentName": "source.python",
+          "patterns": [
+            {
+              "include": "source.python"
+            }
+          ]
+        },
+        {
+          "include": "source.python"
+        }
+      ]
+    },
+    {
+      "begin": "(?i)<language\\s+language=[\"']ruby[\"'](?:\\s[^>]*)?>",
+      "end": "</language>",
+      "name": "meta.embedded.language.ruby.xml",
+      "patterns": [
+        {
+          "begin": "<!\\[CDATA\\[",
+          "end": "\\]\\]>",
+          "contentName": "source.ruby",
+          "patterns": [
+            {
+              "include": "source.ruby"
+            }
+          ]
+        },
+        {
+          "include": "source.ruby"
         }
       ]
     },
