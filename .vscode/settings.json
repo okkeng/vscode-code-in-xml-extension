@@ -1,10 +1,8 @@
 // Place your settings in this file to overwrite default and user settings.
 {
   // *** Workbench Appearance ***
-  "workbench.colorTheme": "Default Dark Modern",
-  "workbench.iconTheme": "vs-seti",
-  // "workbench.colorTheme": "Visual Studio Dark",
-  // "workbench.iconTheme": "gruvbox-icon-theme",
+  "workbench.colorTheme": "Visual Studio Dark",
+  "workbench.iconTheme": "material-icon-theme",
   // *** Editor ***
   "editor.fontFamily": "HackGen, 'Yu Gothic UI', Consolas, 'Courier New', monospace",
   "editor.formatOnSave": true,
@@ -12,6 +10,7 @@
   "editor.inlineSuggest.enabled": true,
   "editor.tabSize": 2,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.renderWhitespace": "trailing",
   // *** Prettier ***
   "prettier.tabWidth": 2,
   "prettier.printWidth": 120,
@@ -32,7 +31,9 @@
   // *** File ***
   "files.eol": "\n",
   "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
   "[markdown]": {
+    "files.trimTrailingWhitespace": false,
     "editor.defaultFormatter": "yzhang.markdown-all-in-one",
     "editor.codeActionsOnSave": {
       "source.fixAll.markdownlint": "always"
@@ -62,7 +63,7 @@
     "dist": true // set this to false to include "dist" folder in search results
   },
   // Turn off tsc task auto detection since we have the necessary tasks as npm scripts
-  "typescript.tsc.autoDetect": "off",
+  "js/ts.tsc.autoDetect": "off",
   // *** Telemetry ***
   // Disable all telemetry settings
   "gitlens.telemetry.enabled": false,

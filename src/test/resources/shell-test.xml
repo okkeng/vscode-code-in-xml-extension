@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page>
+  <title>Shell Highlight Test</title>
+  <content>
+    <bash>
+      #!/usr/bin/env bash
+      set -euo pipefail
+      echo "Hello from bash"
+      for n in 1 2 3; do
+        echo "item: $n"
+      done
+    </bash>
+
+    <shell>
+      <![CDATA[
+      # shell with CDATA
+      if [ -f /etc/os-release ]; then
+        . /etc/os-release
+        echo "OS: $NAME"
+      fi
+      ]]>
+    </shell>
+
+    <sh>
+      <![CDATA[
+      # sh alias block
+      now=$(date +%Y-%m-%d)
+      echo "date=$now"
+      ]]>
+    </sh>
+
+    <language language="bash">
+      echo "language attribute: bash"
+    </language>
+
+    <language language="shell">
+      echo "language attribute: shell"
+    </language>
+
+    <language language="sh">
+      echo "language attribute: sh"
+    </language>
+  </content>
+</page>

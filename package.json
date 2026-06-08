@@ -11,14 +11,22 @@
     "javascript",
     "python",
     "ruby",
+    "mybatis",
+    "sql",
+    "bash",
+    "shell",
+    "sh",
     "syntax highlighting",
     "embedded code in xml"
   ],
-  "version": "0.0.2",
+  "version": "1.0.0",
   "publisher": "okkeng",
   "icon": "images/icon.png",
   "license": "MIT",
-  "repository": "https://github.com/okkeng/vscode-code-in-xml-extension.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/okkeng/vscode-code-in-xml-extension.git"
+  },
   "engines": {
     "vscode": "^1.101.0"
   },
@@ -41,7 +49,9 @@
           "source.java": "java",
           "source.js": "javascript",
           "source.python": "python",
-          "source.ruby": "ruby"
+          "source.ruby": "ruby",
+          "source.sql": "sql",
+          "source.shell": "shellscript"
         }
       }
     ]
