@@ -4,9 +4,8 @@
   "recommendations": [
     // *** IDE ***
     "ms-vscode-remote.vscode-remote-extensionpack",
-    "ms-vscode-remote.remote-ssh-edit",
+    //"ms-vscode-remote.remote-ssh-edit",
     "ms-vscode.remote-explorer",
-    "VisualStudioExptTeam.vscodeintellicode",
     "ms-vscode.live-server",
     // *** Code Formatter / Linter / Checker ***
     "SonarSource.sonarlint-vscode",
@@ -17,7 +16,7 @@
     "sgryjp.japanese-word-handler",
     "mosapride.zenkaku",
     // *** Utility / Helper ***
-    "shardulm94.trailing-spaces",
+    //"shardulm94.trailing-spaces",
     "oderwat.indent-rainbow",
     "aaron-bond.better-comments",
     "christian-kohler.path-intellisense",
@@ -31,7 +30,7 @@
     "redhat.vscode-xml",
     "DotJoshJohnson.xml",
     // *** JSON ***
-    "ZainChen.json",
+    //"ZainChen.json",
     "nickdemayo.vscode-json-editor",
     // *** Markdown ***
     "yzhang.markdown-all-in-one",
@@ -43,8 +42,8 @@
     "emilast.logfilehighlighter",
     "ibm.output-colorizer",
     // *** Generative AI ***
-    "GitHub.copilot",
-    "GitHub.copilot-chat",
+    //"GitHub.copilot-chat",
+    //"Google.geminicodeassist",
     // *** Git ***
     "eamodio.gitlens",
     "mhutchie.git-graph",
