@@ -3,10 +3,10 @@
   // for the documentation about the extensions.json format
   "recommendations": [
     // *** IDE ***
-    "ms-vscode-remote.vscode-remote-extensionpack",
-    //"ms-vscode-remote.remote-ssh-edit",
+    "ms-vscode-remote.remote-ssh",
+    "ms-vscode-remote.remote-ssh-edit",
+    "ms-vscode-remote.remote-server",
     "ms-vscode.remote-explorer",
-    "ms-vscode.live-server",
     // *** Code Formatter / Linter / Checker ***
     "SonarSource.sonarlint-vscode",
     "streetsidesoftware.code-spell-checker",
@@ -16,7 +16,7 @@
     "sgryjp.japanese-word-handler",
     "mosapride.zenkaku",
     // *** Utility / Helper ***
-    //"shardulm94.trailing-spaces",
+    "shardulm94.trailing-spaces",
     "oderwat.indent-rainbow",
     "aaron-bond.better-comments",
     "christian-kohler.path-intellisense",
@@ -25,28 +25,23 @@
     // *** TypeScript ***
     "dbaeumer.vscode-eslint",
     "connor4312.esbuild-problem-matchers",
+    // *** Test Runner ***
     "ms-vscode.extension-test-runner",
     // *** XML ***
     "redhat.vscode-xml",
     "DotJoshJohnson.xml",
     // *** JSON ***
-    //"ZainChen.json",
-    "nickdemayo.vscode-json-editor",
     // *** Markdown ***
     "yzhang.markdown-all-in-one",
     "davidanson.vscode-markdownlint",
-    "mdickin.markdown-shortcuts",
-    "csholmq.excel-to-markdown-table",
     "bierner.markdown-preview-github-styles",
     // *** Log ***
-    "emilast.logfilehighlighter",
     "ibm.output-colorizer",
-    // *** Generative AI ***
-    //"GitHub.copilot-chat",
-    //"Google.geminicodeassist",
     // *** Git ***
-    "eamodio.gitlens",
-    "mhutchie.git-graph",
-    "donjayamanne.githistory"
+    //"eamodio.gitlens",
+    //"mhutchie.git-graph",
+    //"donjayamanne.githistory",
+    // *** Theme ***
+    "JonathanHarty.gruvbox-material-icon-theme"
   ]
 }

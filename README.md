@@ -1,28 +1,28 @@
 # Code in XML
 
-Add syntax highlighting to embedded code blocks inside XML files, including MyBatis and other SQL-embedded XML formats. Supported languages are:  
+Add syntax highlighting to embedded code blocks inside XML files. Supported languages are:  
 
 - `<groovy>`
 - `<java>`
 - `<javascript>`
 - `<python>`
 - `<ruby>`
-- `<sql>`
-- `<bash>` / `<shell>` / `<sh>`
+- `<sql>` | MyBatis tags (`<select>` / `<insert>` / `<update>` / `<delete>`)
+- `<bash>` | `<shell>` | `<sh>`
 
 ---
 
-🇯🇵 **Japanese note**  
+🌸 **Japanese note**  
 XMLファイルに記述した上記言語に対し各言語のハイライトをします。ハイライトは対象言語の拡張を追加してください。  
 
 ---
 
-I made this extensions to help developers who work with XML DSL files that contain embedded code snippets. It also supports MyBatis XML mappers with native tags like `<select>`, `<insert>`, `<update>`, and `<delete>`.  
-Here is the sample XML DSL file Images before and after applying this extension's syntax highlighting:  
+I initially created this extension to help my team work with XML DSL files containing embedded Groovy code snippets for Apache Camel. Since it proved useful, I expanded it to support other languages like JS, SQL, and MyBatis mapper tags like `<select>`, `<insert>`, and so on.  
+Here are sample XML DSL file images before and after applying this extension's syntax highlighting:  
 
 ![XML Sample Before Image](images/xml-sample-before.png)
 
-I hope that colored lines help you to read codes easily and quickly:
+I hope this syntax highlighting helps you read code more easily and quickly:
 
 ![XML Sample After Image](images/xml-sample-after.png)
 
@@ -38,26 +38,27 @@ I hope that colored lines help you to read codes easily and quickly:
 
 ## 📋 Required Extensions
 
-For full syntax highlighting, enable language support for the languages you use (for example):
+For full syntax highlighting, install language extensions based on the languages you use (for example):
 
-- **Groovy**: Language support from VS Code Marketplace
-- **Java**: Extension Pack for Java (Microsoft)
+- **Java**: [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) (Microsoft)
+- **Python**: [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) (Microsoft)
+- **Groovy**: [Groovy Language Support](https://marketplace.visualstudio.com/items?itemName=marlon407.code-groovy) or similar
+- **Ruby**: [Ruby](https://marketplace.visualstudio.com/items?itemName=shopify.ruby-lsp) (Shopify)
+- **SQL**: [SQLTools](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools) (mtxr), [SQL Server](https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql) (Microsoft), or [PostgreSQL](https://marketplace.visualstudio.com/items?itemName=ms-ossdata.vscode-pgsql) (Microsoft)
 - **JavaScript**: Built-in to VS Code
-- **Python**: Python (Microsoft)
-- **Ruby**: Ruby (Shopify)
-- **SQL**: SQL Tools (mtxr) or Better SQL Syntax Highlighting (Joe Previte)
-- **Shell Script (bash/sh)**: ShellScript language support (VS Code shell grammar or marketplace extension)
 
-Future plans:  
+Optional XML support:
 
-- Enable the linter and formatter settings for each language
-- Support another language if needed
+- [XML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml)
+- [XML Tools](https://marketplace.visualstudio.com/items?itemName=DotJoshJohnson.xml)
 
 ---
 
 ## 💡 Usage Examples
 
-### Java Block
+### Language Blocks
+
+#### Java Block
 
 ```xml
 <java>
@@ -69,7 +70,7 @@ Future plans:
 </java>
 ```
 
-### Python Block
+#### Python Block
 
 ```xml
 <python>
@@ -82,7 +83,7 @@ Future plans:
 </python>
 ```
 
-### JavaScript with CDATA
+#### JavaScript with CDATA
 
 ```xml
 <javascript><![CDATA[
@@ -93,7 +94,55 @@ Future plans:
 ]]></javascript>
 ```
 
-### MyBatis SQL Example
+#### Groovy Block
+
+```xml
+<groovy>
+  println "Hello from Groovy!"
+  def items = ['apple', 'banana', 'cherry']
+  items.each { println it }
+</groovy>
+```
+
+#### Generic Language Attribute Format
+
+```xml
+<language language="sql">
+  SELECT * FROM products WHERE status = 'active'
+</language>
+```
+
+#### Shell Script Block
+
+```xml
+<bash><![CDATA[
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "start job"
+for file in /data/in/*.csv; do
+  echo "processing: $file"
+done
+]]></bash>
+```
+
+### Whole XML
+
+#### Apache Camel XML DSL
+
+```xml
+<route>
+  <from uri="direct:start"/>
+  <process>
+    <script language="python">
+      message.body = message.body.upper()
+    </script>
+  </process>
+  <to uri="direct:end"/>
+</route>
+```
+
+#### MyBatis Mapper XML
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -125,141 +174,51 @@ Future plans:
 </mapper>
 ```
 
-### Groovy Block
-
-```xml
-<groovy>
-  println "Hello from Groovy!"
-  def items = ['apple', 'banana', 'cherry']
-  items.each { println it }
-</groovy>
-```
-
-### Generic Language Attribute Format
-
-```xml
-<language language="sql">
-  SELECT * FROM products WHERE status = 'active'
-</language>
-```
-
-### Shell Script Block
-
-```xml
-<bash><![CDATA[
-#!/usr/bin/env bash
-set -euo pipefail
-
-echo "start job"
-for file in /data/in/*.csv; do
-  echo "processing: $file"
-done
-]]></bash>
-```
-
----
-
-## 🎯 Use Cases
-
-### Apache Camel XML DSL
-
-```xml
-<route>
-  <from uri="direct:start"/>
-  <process>
-    <script language="python">
-      message.body = message.body.upper()
-    </script>
-  </process>
-  <to uri="direct:end"/>
-</route>
-```
-
-### MyBatis Mapper with Complex SQL
-
-```xml
-<select id="findUsers" resultMap="userMap"><![CDATA[
-  SELECT u.id, u.name, d.department_name
-  FROM users u
-  JOIN departments d ON u.dept_id = d.id
-  WHERE 1=1
-    <if test="name != null">
-      AND u.name LIKE CONCAT('%', #{name}, '%')
-    </if>
-    <if test="status != null">
-      AND u.status = #{status}
-    </if>
-  ORDER BY u.created_date DESC
-]]></select>
-```
-
 ---
 
 ## 📂 File Types
 
-This extension targets files with `.xml` extension.  
+This extension targets `.xml` files.  
 
 ---
 
 ## 🚀 Installation
 
-Install via the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/)  
+Install via [Code in XML](https://marketplace.visualstudio.com/items?itemName=okkeng.vscode-code-in-xml) on the Visual Studio Code Marketplace  
 _or_  
 Manually install from `.vsix`:  
 
 ```sh
-code --install-extension vscode-code-in-xml-0.0.2.vsix
+code --install-extension vscode-code-in-xml-1.0.0.vsix
 ```
-
----
-
-## ⚙️ Requirements
-
-This extension requires VS Code to recognize language scopes. It works best when paired with language-specific extensions.
-
-### XML Support (Optional)
-
-- [XML Tools](https://marketplace.visualstudio.com/items?itemName=DotJoshJohnson.xml)
-- [XML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml)
-
-### Language Extensions (Recommended)
-
-To enable syntax highlighting for embedded code, install the language extension for each language you use:
-
-- **Java**: [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) (Microsoft)
-- **Python**: [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) (Microsoft)
-- **Groovy**: [Groovy Language Support](https://marketplace.visualstudio.com/items?itemName=marlon407.code-groovy) or similar
-- **Ruby**: [Ruby](https://marketplace.visualstudio.com/items?itemName=shopify.ruby-lsp) (Shopify)
-- **SQL**: [SQL Tools](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools) (mtxr) or [Better SQL Syntax Highlighting](https://marketplace.visualstudio.com/items?itemName=joe-previte.code-sql-syntax) (Joe Previte)
-- **JavaScript**: Built-in to VS Code
 
 ---
 
 ## 📝 Notes
 
-- This extension provides syntax highlighting for embedded code by delegating language recognition to VS Code's built-in language servers and marketplace extensions
+- This extension provides syntax highlighting for embedded code by delegating language recognition to VS Code built-in grammars and installed language extensions
 - SQL support is particularly useful for **MyBatis** XML mappers, which often contain complex SQL with comments and special syntax
 - The extension works with both inline code and CDATA sections
 - Supported SQL dialects include Oracle, MySQL, and PostgreSQL (through the installed SQL extension)
 - VS Code built-in JavaScript grammar is used automatically (for `source.js` highlight)
 
-Don't forget to add the necessary libraries to your Java project. See:  
+If you use Apache Camel or Spring Integration with Java, add the necessary libraries to your project. See:  
 
-- [Expression Languages](https://camel.apache.org/components/4.10.x/languages/index.html)
-- [Java DSL](https://docs.spring.io/spring-integration/reference/dsl.html)
+- [Apache Camel > Expression Languages](https://camel.apache.org/components/latest/languages/index.html)
+- [Spring Integration > Java DSL](https://docs.spring.io/spring-integration/reference/dsl.html)
 
 ---
 
 ## 📝 Known Issues
 
-- Color themes must define styles for `source.groovy`, `source.js`, etc.
 - In very nested XML structures, some themes may ignore embedded scopes
+- In embedded code, words such as `name` and `status` in SQL may be highlighted as keywords by your installed language extension when they match reserved words.
 
 ---
 
 ## 📌 Release Notes
 
-### v1.0.0
+### v1.0.0 - June 11, 2026
 
 - Added SQL highlighting support for XML-embedded SQL blocks.
 - Added MyBatis mapper tag support: `<select>`, `<insert>`, `<update>`, and `<delete>`.
@@ -268,6 +227,7 @@ Don't forget to add the necessary libraries to your Java project. See:
 - Added shell language attribute support: `<language language="bash|shell|sh">`.
 - Added test resources for Java, Python, MyBatis SQL, and shell script patterns.
 - Updated README and extension metadata for official release.
+- Changed the icon colors from gray/white to black/white/orange.
 
 ### v0.0.2
 
