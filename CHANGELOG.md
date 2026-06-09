@@ -4,21 +4,24 @@ All notable changes to the "vscode-code-in-xml" extension will be documented in 
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [1.0.0] - 2026-06-08
+## [1.0.0] - 2026-06-11
 
 ### Added
 
 - SQL support for MyBatis XML mappers and SQL-embedded XML formats
 - MyBatis native tags: `<select>`, `<insert>`, `<update>`, `<delete>` with syntax highlighting
 - Support for multiple SQL dialects: Oracle, MySQL, PostgreSQL
-- Attribute-based language specification: `<language language="sql">` pattern
-- Test files for Java, Python, and MyBatis examples
+- SQL language attribute support: `<language language="sql">`
+- Shell script tag support: `<bash>`, `<shell>`, and `<sh>`
+- Shell language attribute support: `<language language="bash|shell|sh">`
+- Test files for Java, Python, MyBatis SQL, and shell script patterns
 
 ### Changed
 
 - Enhanced README with comprehensive examples for all supported languages
 - Expanded keywords to include MyBatis
 - Improved documentation for required language extensions
+- Changed the icon colors from gray/white to black/white/orange
 
 ### Supported Languages
 
