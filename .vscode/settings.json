@@ -2,7 +2,7 @@
 {
   // *** Workbench Appearance ***
   "workbench.colorTheme": "Visual Studio Dark",
-  "workbench.iconTheme": "gruvbox-material-icon-theme",
+  "workbench.iconTheme": "gruvbox-icon-theme",
   // *** Editor ***
   "editor.fontFamily": "HackGen, Consolas, 'Courier New', monospace",
   "editor.formatOnSave": true,
@@ -23,6 +23,21 @@
     "package-lock.json",
     "vsc-extension-quickstart.md",
     "*-test.xml"
+  ],
+  "cSpell.words": [
+    "okkeng",
+    "mybatis",
+    "vsix",
+    "vsce",
+    "groovy",
+    "esbuild",
+    "tsconfig",
+    "prepublish",
+    "shellscript",
+    "tmLanguage",
+    "vscodeignore",
+    "proofreading",
+    "textlint"
   ],
   // *** 日本語校正くん ***
   "japanese-proofreading.textlint.助詞の連続": true,
