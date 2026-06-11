@@ -1,14 +1,23 @@
 .vscode/**
 .vscode-test/**
 out/**
+release/**
 node_modules/**
 src/**
+documents/**
 .gitignore
 .yarnrc
 esbuild.js
+README-sample.md
 vsc-extension-quickstart.md
 **/tsconfig.json
 **/eslint.config.mjs
 **/*.map
 **/*.ts
 **/.vscode-test.*
+
+# Keep only images used by Marketplace/README.
+images/**
+!images/icon.png
+!images/xml-sample-before.png
+!images/xml-sample-after.png
