@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.repository.SalesRepository">
+
+  <!-- SELECT example -->
+  <select id="getSalesById" parameterType="int">
+    SELECT id, order_code, status, created_date
+    FROM sales
+    WHERE id = #{id}
+  </select>
+
+  <!-- INSERT example with CDATA - Oracle specific syntax -->
+  <insert id="insertSalesData" parameterType="com.example.model.Sales"><![CDATA[
+    INSERT INTO sales (
+      order_code,
+      status,
+      execute_status,
+      created_date,
+      created_by
+    ) VALUES (
+      #{sal.orderCode},
+      #{sal.status},
+      #{sal.executeStatus},
+      TRUNC(SYSDATE),
+      'SYSTEM'
+    )
+  ]]>  </insert>
+
+  <!-- UPDATE example - MySQL specific syntax -->
+  <update id="updateSalesStatus" parameterType="com.example.model.Sales"><![CDATA[
+    UPDATE sales
+    SET status = #{status},
+        modified_date = NOW(),
+        modified_by = #{modifiedBy}
+    WHERE id = #{id}
+      AND created_date >= DATE_SUB(NOW(), INTERVAL 30 DAY)
+  ]]>  </update>
+
+  <!-- DELETE example - PostgreSQL specific syntax -->
+  <delete id="deleteSalesOlderThan" parameterType="map"><![CDATA[
+    DELETE FROM sales
+    WHERE created_date < to_timestamp(#{cutoffDate}, 'YYYY-MM-DD')
+      AND status = 'ARCHIVED'
+  ]]>  </delete>
+
+  <!-- Complex SELECT with multiple conditions -->
+  <select id="searchSales" parameterType="map">
+    <![CDATA[
+    SELECT s.id, s.order_code, s.status, s.created_date
+    FROM sales s
+    WHERE 1=1
+    ]]>
+    <if test="orderCode != null">
+      AND s.order_code = #{orderCode}
+    </if>
+    <if test="startDate != null">
+      AND s.created_date >= #{startDate}
+    </if>
+    <if test="endDate != null">
+      AND s.created_date &lt; #{endDate}
+    </if>
+    <![CDATA[
+    ORDER BY s.created_date DESC
+    ]]>
+  </select>
+
+</mapper>
