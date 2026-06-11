@@ -1,26 +1,35 @@
 {
   "name": "vscode-code-in-xml",
   "displayName": "Code in XML",
-  "description": "Support for embedded code blocks (e.g. <groovy>...</groovy>) in XML",
+  "description": "Syntax highlighting for embedded code blocks (e.g., <groovy>...</groovy>) in XML files",
   "keywords": [
-    "xml",
-    "xml dsl",
-    "apache camel",
-    "groovy",
-    "java",
-    "javascript",
-    "python",
-    "ruby",
-    "syntax highlighting",
-    "embedded code in xml"
+    "xml highlight",
+    "xml highlighting",
+    "xml syntax highlight",
+    "xml syntax highlighting",
+    "xml code highlight",
+    "xml code highlighting",
+    "xml dsl highlight",
+    "xml dsl highlighting",
+    "xml mapper highlight",
+    "xml mapper highlighting",
+    "dsl highlight",
+    "dsl highlighting",
+    "mybatis highlight",
+    "mybatis highlighting",
+    "sql highlighting",
+    "sql highlight"
   ],
-  "version": "0.0.2",
+  "version": "1.0.0",
   "publisher": "okkeng",
   "icon": "images/icon.png",
   "license": "MIT",
-  "repository": "https://github.com/okkeng/vscode-code-in-xml-extension.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/okkeng/vscode-code-in-xml-extension.git"
+  },
   "engines": {
-    "vscode": "^1.101.0"
+    "vscode": "^1.85.0"
   },
   "categories": [
     "Programming Languages"
@@ -41,7 +50,9 @@
           "source.java": "java",
           "source.js": "javascript",
           "source.python": "python",
-          "source.ruby": "ruby"
+          "source.ruby": "ruby",
+          "source.sql": "sql",
+          "source.shell": "shellscript"
         }
       }
     ]
@@ -63,7 +74,7 @@
   "devDependencies": {
     "@types/mocha": "^10.0.10",
     "@types/node": "20.x",
-    "@types/vscode": "^1.101.0",
+    "@types/vscode": "^1.85.0",
     "@typescript-eslint/eslint-plugin": "^8.31.1",
     "@typescript-eslint/parser": "^8.31.1",
     "@vscode/test-cli": "^0.0.10",
