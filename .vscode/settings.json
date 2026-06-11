@@ -1,17 +1,16 @@
 // Place your settings in this file to overwrite default and user settings.
 {
   // *** Workbench Appearance ***
-  "workbench.colorTheme": "Default Dark Modern",
-  "workbench.iconTheme": "vs-seti",
-  // "workbench.colorTheme": "Visual Studio Dark",
-  // "workbench.iconTheme": "gruvbox-icon-theme",
+  "workbench.colorTheme": "Visual Studio Dark",
+  "workbench.iconTheme": "gruvbox-material-icon-theme",
   // *** Editor ***
-  "editor.fontFamily": "HackGen, 'Yu Gothic UI', Consolas, 'Courier New', monospace",
+  "editor.fontFamily": "HackGen, Consolas, 'Courier New', monospace",
   "editor.formatOnSave": true,
   "editor.formatOnPaste": false,
   "editor.inlineSuggest.enabled": true,
   "editor.tabSize": 2,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.renderWhitespace": "trailing",
   // *** Prettier ***
   "prettier.tabWidth": 2,
   "prettier.printWidth": 120,
@@ -22,7 +21,8 @@
     "settings.json",
     ".vscodeignore",
     "package-lock.json",
-    "vsc-extension-quickstart.md"
+    "vsc-extension-quickstart.md",
+    "*-test.xml"
   ],
   // *** 日本語校正くん ***
   "japanese-proofreading.textlint.助詞の連続": true,
@@ -32,7 +32,9 @@
   // *** File ***
   "files.eol": "\n",
   "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
   "[markdown]": {
+    "files.trimTrailingWhitespace": false,
     "editor.defaultFormatter": "yzhang.markdown-all-in-one",
     "editor.codeActionsOnSave": {
       "source.fixAll.markdownlint": "always"
@@ -40,17 +42,14 @@
   },
   "[json][jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features",
-    "files.trimTrailingWhitespace": true
   },
   "[xml]": {
     "editor.defaultFormatter": "DotJoshJohnson.xml",
     "editor.tabSize": 2,
-    "files.trimTrailingWhitespace": true
   },
   "[groovy]": {
     "editor.defaultFormatter": "NicolasVuillamy.vscode-groovy-lint",
     "editor.tabSize": 2,
-    "files.trimTrailingWhitespace": true
   },
   // *** ESLint ***
   "files.exclude": {
@@ -62,10 +61,10 @@
     "dist": true // set this to false to include "dist" folder in search results
   },
   // Turn off tsc task auto detection since we have the necessary tasks as npm scripts
-  "typescript.tsc.autoDetect": "off",
+  "js/ts.tsc.autoDetect": "off",
   // *** Telemetry ***
   // Disable all telemetry settings
-  "gitlens.telemetry.enabled": false,
+  // "gitlens.telemetry.enabled": false,
   "redhat.telemetry.enabled": false,
   "sonarlint.disableTelemetry": true
 }

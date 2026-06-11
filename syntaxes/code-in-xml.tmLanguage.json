@@ -103,6 +103,166 @@
       ]
     },
     {
+      "begin": "(?i)<sql(?:\\s[^>]*)?>",
+      "end": "</sql>",
+      "name": "meta.embedded.block.sql.xml",
+      "patterns": [
+        {
+          "begin": "<!\\[CDATA\\[",
+          "end": "\\]\\]>",
+          "contentName": "source.sql",
+          "patterns": [
+            {
+              "include": "source.sql"
+            }
+          ]
+        },
+        {
+          "include": "source.sql"
+        }
+      ]
+    },
+    {
+      "begin": "(?i)<select(?:\\s[^>]*)?>",
+      "end": "</select>",
+      "name": "meta.embedded.block.sql.xml",
+      "patterns": [
+        {
+          "begin": "<!\\[CDATA\\[",
+          "end": "\\]\\]>",
+          "contentName": "source.sql",
+          "patterns": [
+            {
+              "include": "source.sql"
+            }
+          ]
+        },
+        {
+          "include": "source.sql"
+        }
+      ]
+    },
+    {
+      "begin": "(?i)<insert(?:\\s[^>]*)?>",
+      "end": "</insert>",
+      "name": "meta.embedded.block.sql.xml",
+      "patterns": [
+        {
+          "begin": "<!\\[CDATA\\[",
+          "end": "\\]\\]>",
+          "contentName": "source.sql",
+          "patterns": [
+            {
+              "include": "source.sql"
+            }
+          ]
+        },
+        {
+          "include": "source.sql"
+        }
+      ]
+    },
+    {
+      "begin": "(?i)<update(?:\\s[^>]*)?>",
+      "end": "</update>",
+      "name": "meta.embedded.block.sql.xml",
+      "patterns": [
+        {
+          "begin": "<!\\[CDATA\\[",
+          "end": "\\]\\]>",
+          "contentName": "source.sql",
+          "patterns": [
+            {
+              "include": "source.sql"
+            }
+          ]
+        },
+        {
+          "include": "source.sql"
+        }
+      ]
+    },
+    {
+      "begin": "(?i)<delete(?:\\s[^>]*)?>",
+      "end": "</delete>",
+      "name": "meta.embedded.block.sql.xml",
+      "patterns": [
+        {
+          "begin": "<!\\[CDATA\\[",
+          "end": "\\]\\]>",
+          "contentName": "source.sql",
+          "patterns": [
+            {
+              "include": "source.sql"
+            }
+          ]
+        },
+        {
+          "include": "source.sql"
+        }
+      ]
+    },
+    {
+      "begin": "(?i)<bash(?:\\s[^>]*)?>",
+      "end": "</bash>",
+      "name": "meta.embedded.block.shell.xml",
+      "patterns": [
+        {
+          "begin": "<!\\[CDATA\\[",
+          "end": "\\]\\]>",
+          "contentName": "source.shell",
+          "patterns": [
+            {
+              "include": "source.shell"
+            }
+          ]
+        },
+        {
+          "include": "source.shell"
+        }
+      ]
+    },
+    {
+      "begin": "(?i)<shell(?:\\s[^>]*)?>",
+      "end": "</shell>",
+      "name": "meta.embedded.block.shell.xml",
+      "patterns": [
+        {
+          "begin": "<!\\[CDATA\\[",
+          "end": "\\]\\]>",
+          "contentName": "source.shell",
+          "patterns": [
+            {
+              "include": "source.shell"
+            }
+          ]
+        },
+        {
+          "include": "source.shell"
+        }
+      ]
+    },
+    {
+      "begin": "(?i)<sh(?:\\s[^>]*)?>",
+      "end": "</sh>",
+      "name": "meta.embedded.block.shell.xml",
+      "patterns": [
+        {
+          "begin": "<!\\[CDATA\\[",
+          "end": "\\]\\]>",
+          "contentName": "source.shell",
+          "patterns": [
+            {
+              "include": "source.shell"
+            }
+          ]
+        },
+        {
+          "include": "source.shell"
+        }
+      ]
+    },
+    {
       "begin": "(?i)<language\\s+language=[\"']groovy[\"'](?:\\s[^>]*)?>",
       "end": "</language>",
       "name": "meta.embedded.language.groovy.xml",
@@ -199,6 +359,46 @@
         },
         {
           "include": "source.ruby"
+        }
+      ]
+    },
+    {
+      "begin": "(?i)<language\\s+language=[\"']sql[\"'](?:\\s[^>]*)?>",
+      "end": "</language>",
+      "name": "meta.embedded.language.sql.xml",
+      "patterns": [
+        {
+          "begin": "<!\\[CDATA\\[",
+          "end": "\\]\\]>",
+          "contentName": "source.sql",
+          "patterns": [
+            {
+              "include": "source.sql"
+            }
+          ]
+        },
+        {
+          "include": "source.sql"
+        }
+      ]
+    },
+    {
+      "begin": "(?i)<language\\s+language=[\"'](?:bash|shell|sh)[\"'](?:\\s[^>]*)?>",
+      "end": "</language>",
+      "name": "meta.embedded.language.shell.xml",
+      "patterns": [
+        {
+          "begin": "<!\\[CDATA\\[",
+          "end": "\\]\\]>",
+          "contentName": "source.shell",
+          "patterns": [
+            {
+              "include": "source.shell"
+            }
+          ]
+        },
+        {
+          "include": "source.shell"
         }
       ]
     },

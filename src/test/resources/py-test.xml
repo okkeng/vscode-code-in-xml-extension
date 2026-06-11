@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page>
+  <title>Python Highlight Test</title>
+  <content>
+    <python>
+      def greet(name):
+          return f"Hello, {name}!"
+
+      items = ['apple', 'banana', 'cherry']
+      for item in items:
+          print(item)
+    </python>
+    <python>
+      <![CDATA[
+      # Python inside CDATA
+      import json
+      from typing import List, Dict
+
+      class DataProcessor:
+          def __init__(self, data: List[Dict]):
+              self.data = data
+
+          def filter_by_status(self, status: str) -> List[Dict]:
+              return [item for item in self.data if item.get('status') == status]
+
+      data = [
+          {'name': 'Alice', 'status': 'active'},
+          {'name': 'Bob', 'status': 'inactive'}
+      ]
+      processor = DataProcessor(data)
+      print(json.dumps(processor.filter_by_status('active'), indent=2))
+      ]]>
+    </python>
+  </content>
+</page>
