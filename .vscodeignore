@@ -1,3 +1,4 @@
+.devcontainer/**
 .vscode/**
 .vscode-test/**
 out/**
@@ -15,6 +16,7 @@ vsc-extension-quickstart.md
 **/*.map
 **/*.ts
 **/.vscode-test.*
+memo.md
 
 # Keep only images used by Marketplace/README.
 images/**
