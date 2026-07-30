@@ -3,6 +3,13 @@
   // *** Workbench Appearance ***
   "workbench.colorTheme": "Visual Studio Dark",
   "workbench.iconTheme": "gruvbox-icon-theme",
+  "workbench.colorCustomizations": {
+    "editorWhitespace.foreground": "#FFFFFC",
+    "statusBar.background": "#3F3F3F",
+    "statusBar.foreground": "#FFFFFC",
+    "statusBarItem.remoteBackground": "#557A5F",
+    "statusBarItem.remoteForeground": "#FFFFFC",
+  },
   // *** Editor ***
   "editor.fontFamily": "HackGen, Consolas, 'Courier New', monospace",
   "editor.formatOnSave": true,
@@ -22,7 +29,8 @@
     ".vscodeignore",
     "package-lock.json",
     "vsc-extension-quickstart.md",
-    "*-test.xml"
+    "*-test.xml",
+    "devcontainer.json"
   ],
   "cSpell.words": [
     "okkeng",
@@ -39,11 +47,6 @@
     "proofreading",
     "textlint"
   ],
-  // *** 日本語校正くん ***
-  "japanese-proofreading.textlint.助詞の連続": true,
-  "japanese-proofreading.textlint.ピリオドとカンマの使用（半角）": false,
-  "japanese-proofreading.textlint.丸かっこ（）": false,
-  "japanese-proofreading.textlint.大かっこ［］": false,
   // *** File ***
   "files.eol": "\n",
   "files.insertFinalNewline": true,

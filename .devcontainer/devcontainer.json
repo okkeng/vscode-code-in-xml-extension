@@ -1,0 +1,49 @@
+{
+  "name": "dev-node",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:22-bookworm",
+  "features": {},
+  "forwardPorts": [],
+  "postCreateCommand": "npm install --no-bin-links",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // *** Code Formatter / Linter / Checker ***
+        "SonarSource.sonarlint-vscode",
+        "streetsidesoftware.code-spell-checker",
+        "esbenp.prettier-vscode",
+        // *** Japanese Support ***
+        "sgryjp.japanese-word-handler",
+        "mosapride.zenkaku",
+        // *** Utility / Helper ***
+        "shardulm94.trailing-spaces",
+        "oderwat.indent-rainbow",
+        "aaron-bond.better-comments",
+        "christian-kohler.path-intellisense",
+        // *** Groovy ***
+        "NicolasVuillamy.vscode-groovy-lint",
+        // *** TypeScript ***
+        "dbaeumer.vscode-eslint",
+        "connor4312.esbuild-problem-matchers",
+        // *** Test Runner ***
+        "ms-vscode.extension-test-runner",
+        // *** XML ***
+        "redhat.vscode-xml",
+        "DotJoshJohnson.xml",
+        // *** JSON ***
+        // *** Markdown ***
+        "yzhang.markdown-all-in-one",
+        "davidanson.vscode-markdownlint",
+        "bierner.markdown-preview-github-styles",
+        // *** Log ***
+        "ibm.output-colorizer",
+        // *** Git ***
+        //"eamodio.gitlens",
+        //"mhutchie.git-graph",
+        //"donjayamanne.githistory",
+        // *** Theme ***
+        "JonathanHarty.gruvbox-material-icon-theme"
+      ]
+    }
+  },
+  "remoteUser": "node"
+}
