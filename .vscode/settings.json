@@ -33,7 +33,7 @@
     "devcontainer.json"
   ],
   "cSpell.words": [
-    "okkeng",
+    "arukumo",
     "mybatis",
     "vsix",
     "vsce",
@@ -51,6 +51,9 @@
   "files.eol": "\n",
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
+  "files.associations": {
+    "cspell.json": "jsonc"
+  },
   "[markdown]": {
     "files.trimTrailingWhitespace": false,
     "editor.defaultFormatter": "yzhang.markdown-all-in-one",

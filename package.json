@@ -3,30 +3,25 @@
   "displayName": "Code in XML",
   "description": "Syntax highlighting for embedded code blocks (e.g., <groovy>...</groovy>) in XML files",
   "keywords": [
-    "xml highlight",
-    "xml highlighting",
-    "xml syntax highlight",
-    "xml syntax highlighting",
-    "xml code highlight",
-    "xml code highlighting",
-    "xml dsl highlight",
-    "xml dsl highlighting",
-    "xml mapper highlight",
-    "xml mapper highlighting",
-    "dsl highlight",
-    "dsl highlighting",
-    "mybatis highlight",
-    "mybatis highlighting",
-    "sql highlighting",
-    "sql highlight"
+    "xml",
+    "syntax",
+    "highlight",
+    "embedded code",
+    "xml dsl",
+    "groovy",
+    "mybatis",
+    "sql"
   ],
-  "version": "1.0.0",
-  "publisher": "okkeng",
+  "version": "1.0.1",
+  "publisher": "arukumo",
   "icon": "images/icon.png",
   "license": "MIT",
+  "sponsor": {
+    "url": "https://buymeacoffee.com/arukumo"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/okkeng/vscode-code-in-xml-extension.git"
+    "url": "https://github.com/arukumo/vscode-code-in-xml.git"
   },
   "engines": {
     "vscode": "^1.85.0"

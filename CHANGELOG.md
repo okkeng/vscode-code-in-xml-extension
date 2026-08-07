@@ -4,6 +4,18 @@ All notable changes to the "vscode-code-in-xml" extension will be documented in 
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [1.0.1] - 2026-08-07
+
+### Changed
+
+- Increased extension icon size for better Marketplace visibility
+- Restructured and revised README for clarity and conciseness
+
+### Added
+
+- Before/after example screenshots (Groovy in XML, MyBatis mapper XML)
+- Buy Me a Coffee support link
+
 ## [1.0.0] - 2026-06-11
 
 ### Added

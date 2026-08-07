@@ -10,33 +10,46 @@
 6. 動作確認（ローカル）
 7. VS Code Marketplaceへリリース
 
-## 1. Git プロジェクトを clone する
+### 1. Git プロジェクトを clone する
 
-<!-- TODO: Update repository URL after GitHub migration -->
+#### リポジトリ
+
 ```bash
-git clone https://github.com/okkeng/vscode-code-in-xml-extension.git
+git clone https://github.com/arukumo/vscode-code-in-xml.git
+```
+#### ブランチルール
+
+リリースしている資源 = `main` ブランチ  
+開発する際は、`release/<バージョン>` ブランチを作成する。  
+リリースブランチに対し、`feature` ブランチで修正する。  
+作成した作業ブランチ（`release` ブランチ/`feature` ブランチ）はマージ後削除する。
+
+```plaintext
+main
+┣ release/1.0.1
+┗ release/1.0.2
+    ┣ feature/<機能>
+    ┗ feature/<機能>
 ```
 
-> [!CAUTION]
-> **資材の更新について**
->
-> すべての Git 操作（add, commit, push など）は**ホスト側**で実施する。
->
-> 理由：
->
-> - SSH キーがホスト側にある
-> - 環境固有の設定を .devcontainer に入れない
+#### Git更新について
 
-## 2. ホスト側（Linux VM または WSL2）で VS Code を開く
+DevContainer環境を作成したが、プラグインをホスト側に入れたくないため（他の案件と混ざる）。  
+Git操作（add, commit, push など）はホスト側で行った方がいいかも。理由は以下  
 
-SSHリモートなどで開発する場合は、VS Code の Remote - SSH 拡張機能を使用して、リモートホストに接続し、Open Folder で clone したプロジェクトを開く。
+- SSH キーがホスト側にある
+- 環境固有の設定を .devcontainer に明に入れない
 
-## 3. Dev Container を実体化
+### 2. ホスト側（VM または WSL2）で VS Code を開く
+
+SSHリモートなどで開発する場合は、VS Code の Remote - SSH 拡張機能を使用してリモートホストに接続し、Open Folder で clone したプロジェクトを開く。
+
+### 3. Dev Container を実体化
 
 コマンドパレット（VS CodeのF1キー） → `Dev Containers: Reopen in Container` を実行。  
 コンテナがビルドされるので切り替わるのを待つ。
 
-## 4. Dev Container 内で開発する
+### 4. Dev Container 内で開発する
 
 VS Code で開発する
 
@@ -45,34 +58,32 @@ npm run watch      # TypeScript + esbuild を監視モードで実行
 npm test           # テスト実行
 ```
 
-## 5. VSIXファイルの作成
+### 5. VSIXファイルの作成
 
 ```bash
 npx @vscode/vsce package -o release/vscode-code-in-xml-1.0.0.vsix
 ```
 
-## 6. 動作確認（ローカル）
-
-### VSIXファイルの直接インストール
+### 6. VSIXファイルの直接インストール（ローカル）
 
 ```bash
 code --install-extension ./release/vscode-code-in-xml-1.0.0.vsix
 ```
 
-## 7. VS Code Marketplaceへリリース
+### 7. VS Code Marketplaceへリリース
 
-### リリース手順
-
-1. [Code in XML](https://marketplace.visualstudio.com/items?itemName=okkeng.vscode-code-in-xml) を表示
-2. Sign in する。
-3. [Marketplace](https://marketplace.visualstudio.com/) へ移動し、`Publish extensions` をクリックする。  
+1. [Marketplace](https://marketplace.visualstudio.com/vscode) を表示
+2. `Sign in` する。
+3. `Publish extensions` をクリックする。  
 4. `Code in XML` をクリックする。
 5. 三点リーダーから `Update` を選択する。
 6. vsixファイルをアップロードする。
 
 ---
 
-TODO: 2026-07-28 v1.0.1 残作業
+## TODO
+
+TODO: 2026-07-28 v1.0.1 残作業 / 2026-08-07 updated
 
 - [x] DevContainer 環境構築
 - [x] アイコン改善（余白削除）
@@ -82,11 +93,13 @@ TODO: 2026-07-28 v1.0.1 残作業
 - [x] GitHub 移行用 TODO コメント配置
 - [x] 個人ブランド戦略確認
 - [x] テーマ開発方向性決定
-- [ ] BMAC アカウント作成
+- [ ] Gitリポジトリ名変更 vscode-code-in-xml-extension → vscode-code-in-xml
 - [ ] Groovy + SQL 事例画像配置
 - [ ] README, package.json, memo.md の URL 置換
-- [ ] GitHub リポジトリ移行（Transfer）
 - [ ] v1.0.1 ビルド
+- [x] BMAC アカウント作成
+- [ ] GitHub リポジトリ移行（Transfer）
+- [ ] v1.0.2 ビルド
 - [ ] Marketplace アップロード
 - [ ] 開発用ブランチ作成
 - [ ] リリース後git tag 設定
