@@ -1,5 +1,5 @@
 {
-  "name": "vscode-code-in-xml",
+  "name": "code-in-xml",
   "displayName": "Code in XML",
   "description": "Syntax highlighting for embedded code blocks (e.g., <groovy>...</groovy>) in XML files",
   "keywords": [
