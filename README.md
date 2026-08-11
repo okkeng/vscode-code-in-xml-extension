@@ -57,13 +57,13 @@ For XML formatting and validation:
 
 ## 🚀 Installation
 
-Install via [Code in XML](https://marketplace.visualstudio.com/items?itemName=arukumo.vscode-code-in-xml) on the Visual Studio Code Marketplace  
+Install via [Code in XML](https://marketplace.visualstudio.com/items?itemName=arukumo.code-in-xml) on the Visual Studio Code Marketplace  
 *or*  
 Manually install from `.vsix`:  
 
 ```sh
 # Example: replace the version number as needed
-code --install-extension vscode-code-in-xml-1.0.0.vsix
+code --install-extension code-in-xml-1.0.1.vsix
 ```
 
 ## 📝 Notes
