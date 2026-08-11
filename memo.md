@@ -17,6 +17,7 @@
 ```bash
 git clone https://github.com/arukumo/vscode-code-in-xml.git
 ```
+
 #### ブランチルール
 
 リリースしている資源 = `main` ブランチ  
@@ -78,28 +79,3 @@ code --install-extension ./release/vscode-code-in-xml-1.0.0.vsix
 4. `Code in XML` をクリックする。
 5. 三点リーダーから `Update` を選択する。
 6. vsixファイルをアップロードする。
-
----
-
-## TODO
-
-TODO: 2026-07-28 v1.0.1 残作業 / 2026-08-07 updated
-
-- [x] DevContainer 環境構築
-- [x] アイコン改善（余白削除）
-- [x] README 全面改修
-- [x] CHANGELOG 更新（v1.0.1 エントリ）
-- [x] BMAC サポートセクション追加（TODO コメント付き）
-- [x] GitHub 移行用 TODO コメント配置
-- [x] 個人ブランド戦略確認
-- [x] テーマ開発方向性決定
-- [ ] Gitリポジトリ名変更 vscode-code-in-xml-extension → vscode-code-in-xml
-- [ ] Groovy + SQL 事例画像配置
-- [ ] README, package.json, memo.md の URL 置換
-- [ ] v1.0.1 ビルド
-- [x] BMAC アカウント作成
-- [ ] GitHub リポジトリ移行（Transfer）
-- [ ] v1.0.2 ビルド
-- [ ] Marketplace アップロード
-- [ ] 開発用ブランチ作成
-- [ ] リリース後git tag 設定
